@@ -1,0 +1,26 @@
+<html>
+<head><title>Home Page</title></head>
+<body>
+<h1>Hello !</h1>
+<p>Welcome to <span th:text="${appName}">Our App</span></p>
+
+<h1 th:text="#{msg.books.title}">Book List</h1>
+<table border="0">
+    <thead>
+    <tr>
+        <th th:text="#{msg.book.id}" />
+        <th th:text="#{msg.book.title}" />
+        <th th:text="#{msg.book.author}" />
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book :${books}">
+        <td th:text="${book.id}" />
+        <td th:text="${book.title}" />
+        <td th:text="${book.author}" />
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

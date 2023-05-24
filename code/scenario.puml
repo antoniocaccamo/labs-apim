@@ -1,0 +1,15 @@
+@startuml
+
+actor Client            as client
+actor "Resource Server" as server
+actor "Azure AD"        as AAD
+
+client -> AAD       : request access token
+AAD -> client       : access token
+client -> server    : api call\nwith token acquired
+server -> AAD       :  validate token
+server -> server
+server -> client
+
+
+@enduml

@@ -1,0 +1,18 @@
+export SUFFIX=labs-apim
+export LOCATION=northeurope
+
+az group create --name "rg-${SUFFIX}" --location ${LOCATION}
+
+az vnet create -name "vnet-${SUFFIX}" --location ${LOCATION} \
+    --address-prefix 10.0.0.0/16
+
+az apim create --name "apim-${SUFFIX}" --resource-group "rg-${SUFFIX}" \
+  --publisher-name antoniocaccamo-labs --publisher-email admin@antoniocaccamo-labs.it \
+  --no-wait
+
+az apim show --name "apim-${SUFFIX}" --resource-group "rg-${SUFFIX}" -o table
+# anything else
+
+
+
+az group delete --name "rg-${SUFFIX}"

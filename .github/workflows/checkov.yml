@@ -1,0 +1,25 @@
+name: checkov primer
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Embed PlantUML
+        uses: alessandro-marcantoni/puml-markdown@v0.1.1
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: "checkov check"
+        id: checkov-network
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: code/infra
+          framework: terraform
+      - name: Embed PlantUML
+        uses: alessandro-marcantoni/puml-markdown@v0.1.1

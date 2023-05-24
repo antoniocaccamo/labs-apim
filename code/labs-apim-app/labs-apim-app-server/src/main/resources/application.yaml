@@ -1,0 +1,20 @@
+spring:
+    application:
+        name: Labs APIM
+    cloud:
+        azure:
+            active-directory:
+                enabled: true
+                credential:
+                    client-id: ${SERVER_ID}
+
+springdoc:
+    swagger-ui.path: /swagger-ui.html
+
+spring.thymeleaf:
+    cache: false
+    enabled: true 
+    prefix: classpath:/templates/
+    suffix: .html
+
+

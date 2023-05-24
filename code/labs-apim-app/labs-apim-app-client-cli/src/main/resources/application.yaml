@@ -1,0 +1,12 @@
+client :
+  tenant-id : ${TENANT_ID}
+  authority : "https://login.microsoftonline.com/${client.tenant-id}/"
+  application-id  : ${CLIENT_ID}
+  scope : ${SERVER_ID}/.default
+  endpoint: ${ENDPOINT}
+  with-secret :
+    secret : ${CLIENT_SECRET}
+  with-certificate :
+    path :
+      private-key : labs-apim-app-client-cli.pem
+      certificate : labs-apim-app-client-cli.crt
