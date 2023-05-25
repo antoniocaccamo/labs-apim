@@ -5,12 +5,16 @@
 
 ```mermaid
 sequenceDiagram
-    
+    title oauth2 client credential 
+    box Internet 
     participant C as Client
+    end
+    box rgb(0, 80, 255) Azure
     participant AAD as Azure AD
     participant R as Resource Server
+    end
 
-   
+    autonumber
     C ->>+AAD: request access token
     AAD ->>- C: access token
    
