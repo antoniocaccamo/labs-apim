@@ -10,20 +10,23 @@ sequenceDiagram
     end
     box rgb(0, 80, 255) Azure
     participant AAD as Azure AD
+    participant A as API Management 
     participant R as Resource Server
     end
 
     autonumber
-    C ->>+AAD: request access token
-    AAD ->>- C: access token
-   
-    
-    C ->> R: api call with token acquired
+    C ->> AAD: request access token
+    AAD ->> C: access token    
+    C  ->> A: api call with token acquired    
     activate C
-    R ->> AAD:  validate token
+    A ->> A: token and subscription validation
+    A ->> +R: forward request 
+    R --> AAD:  validate token
     R ->> R: serve
-    R ->> C: response
+    R ->> -A: response
+    A ->> C: forward  response
     deactivate C
+    
 ```
 
 ## documentation
