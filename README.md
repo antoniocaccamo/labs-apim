@@ -1,4 +1,31 @@
 # labs apim
+
+## scenario
+
+```mermaid
+sequenceDiagram
+    title oauth2 client credential 
+    box Internet 
+    participant C as Client
+    end
+    box rgb(0, 80, 255) Azure
+    participant AAD as Azure AD
+    participant R as Resource Server
+    end
+
+    autonumber
+    C ->>+AAD: request access token
+    AAD ->>- C: access token
+   
+    
+    C ->> R: api call with token acquired
+    activate C
+    R ->> AAD:  validate token
+    R ->> R: serve
+    R ->> C: response
+    deactivate C
+```
+
 ## documentation
  - [docs](./docs/README.md)
 - [labs-apim-app code](./code/README.md)
@@ -32,7 +59,4 @@
 ### Let's encrypt
 1. [Wildcard SSL certificate by Let's Encrypt](https://codex.so/wildcard-ssl-certificate-by-let-s-encrypt)
 
-## macro design
-
-![https://tamops.files.wordpress.com/2022/01/azure-appgw-apim-page-1.jpg?w=720&h=253](./img/infra/appgw-apim.drawio.png)
 
