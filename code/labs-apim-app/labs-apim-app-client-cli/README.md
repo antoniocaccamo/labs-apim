@@ -1,8 +1,25 @@
 # labs-apim-app-client-cli
 
+## run 
+
+```shell
+source ../../env.vars.sh
+
+./mvnw clean package
+
+# with secret
+java -jar target/*.jar secret
+
+# with certificate
+java -jar target/*.jar certificate
+
+```
+
+
 ## prepare
 
 ```shell
+source ../../env.vars.sh
 
 rm labs-apim-app-client-cli.* 
 
@@ -15,7 +32,7 @@ openssl pkcs8 -topk8 -inform PEM -outform PEM -in labs-apim-app-client-cli.key \
 
 # generate a certificate request
 openssl req -new \
-  -subj "/C=IT/CN=labs-apim-app-client-cli/emailAddress=admin@antoniocaccamo-labs.it" \
+  -subj "/C=IT/CN=labs-apim-app-client-cli/emailAddress=admin@$DOMAIN" \
   -key labs-apim-app-client-cli.key \
   -out labs-apim-app-client-cli.csr
 
@@ -34,20 +51,6 @@ openssl \
   -newkey rsa:2048 \
   -keyout labs-apim-app-client-cli.key \
   -out labs-apim-app-client-cli.csr \
-  -subj "/C=IT/CN=labs-apim-app-client-cli/emailAddress=admin@antoniocaccamo-labs.it"
+  -subj "/C=IT/CN=labs-apim-app-client-cli/emailAddress=admin@$DOMAIN"
 ```
 
-# run 
-
-```shell
-source ../../env.vars.sh
-
-./mvnw clean package
-
-# with secret
-java -jar target/*.jar secret
-
-# with certificate
-java -jar target/*.jar certificate
-
-```

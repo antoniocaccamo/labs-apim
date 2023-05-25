@@ -47,6 +47,5 @@ curl -i -vvv --location "$BASEURL/external/api/books" -H "Authorization: Bearer 
 
 ## Code
 
-- [software server](./labs-apim-app-server/README.md)
-- [software client](./labs-apim-app-client-cli//README.md)
+- [software](./labs-apim-app/README.md)
 - [terraform](./terraform/README.md)
