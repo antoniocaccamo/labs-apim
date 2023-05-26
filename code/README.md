@@ -2,35 +2,7 @@
 
 ## scenario
 
-
-```mermaid
-sequenceDiagram
-    title oauth2 client credential 
-    box Internet 
-    participant C as Client
-    end
-    box rgb(0, 80, 255) Azure
-    participant AAD as Azure AD
-    participant R as Resource Server
-    end
-
-    autonumber
-    C ->>+AAD: request access token
-    AAD ->>- C: access token
-   
-    
-    C ->> R: api call with token acquired
-    activate C
-    R ->> AAD:  validate token
-    R ->> R: serve
-    R ->> C: response
-    deactivate C
-```
-
-
 ```shell
-source env.vars.sh
-
 # retrieve 
 curl -X POST "https://login.microsoftonline.com/$TENANT_ID/oauth2/v2.0/token" \
   -H "Content-Type: application/x-www-form-urlencoded" \
