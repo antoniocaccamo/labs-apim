@@ -4,28 +4,40 @@
 
 ```mermaid
 sequenceDiagram
-    title oauth2 client credential 
-    box Internet 
-    participant C as Client
-    end
-    box rgb(0, 80, 255) Azure
-    participant AAD as Azure AD
-    participant A as API Management 
-    participant R as Resource Server
+  
+    title: oauth2 client credential 
+  
+    box gray Internet 
+    participant C as Client 
     end
 
+    box rgb(0, 80, 255) Azure
+    participant AAD as Azure AD
+    participant AG as Application<br/>Gateway 
+    participant APM as API <br/> Management 
+    participant R as Resource<br/>Server
+    end
+
+    
     autonumber
-    C ->> AAD: request access token
-    AAD ->> C: access token    
-    C  ->> A: api call with token acquired    
+    Note over C, R:  requires app registration on Azure AD <br> for Client and Resource Server 
+    %% token acquisition 
+    C ->> AAD: access token request
+    AAD ->> C: 
+    
+    %% api call
+    C  ->> AG: api call 
+    AG ->> APM:   
     activate C
-    A ->> A: token and subscription validation
-    A ->> +R: forward request 
-    R --> AAD:  validate token
-    R ->> R: serve
-    R ->> -A: response
-    A ->> C: forward  response
+    APM ->> APM: apply security policy
+    APM ->> +R: forward request 
+    R --> AAD:  validate jwt token
+%%  R ->> R: serve
+    R ->> -APM: response
+    APM ->> AG: forward  response
+    AG ->> C: 
     deactivate C
+    
     
 ```
 
