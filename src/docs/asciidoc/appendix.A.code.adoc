@@ -1,5 +1,9 @@
+
 = Appendix
-:appendix-number: character
+:appendix-caption: Appendix
+:sectnums:
+:toc:
+
 :docinfo: shared
 :doctype: book
 :imagesdir: images
@@ -7,8 +11,8 @@
 :source-highlighter: rouge
 :source-language: kotlin, java, shell, groovy, scala
 
-== Code 
-:appendix-caption: Code
+[appendix]
+== Code
 
 [source, shell]
 ----
