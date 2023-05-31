@@ -2,6 +2,9 @@
 :docinfo: shared
 :doctype: book
 :imagesdir: images
+:source-indent: 2
+:source-highlighter: rouge
+:source-language: kotlin, java, shell, groovy, scala
 :title: Labs Azure API Management
 :toc: left
 :toclevels: 3
@@ -46,17 +49,22 @@ deactivate C
 
 ----
 
+
 == Result
 
 .Result 
 [cols="1,1", valign="middle,middle"]
 |===
 
-| web call  | api call
+| web call  
+| api call
 
-| image:05.www.png[]
+| image:05.www.png[width=800px]
 | image:06.api.png[]
 
 |===
 
 image:01.dns.public.png[left, width=500px]
+
+
+include::appendix.A.code.adoc[code]

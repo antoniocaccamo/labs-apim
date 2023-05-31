@@ -1,0 +1,31 @@
+= Appendix
+:appendix-number: character
+:docinfo: shared
+:doctype: book
+:imagesdir: images
+:source-indent: 2
+:source-highlighter: rouge
+:source-language: kotlin, java, shell, groovy, scala
+
+== Code 
+:appendix-caption: Code
+
+[source, shell]
+----
+include::code/env.vars.sh[]
+
+curl -X POST "https://login.microsoftonline.com/$TENANT_ID/oauth2/v2.0/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=client_credentials&scope=$SCOPE" -i
+
+# get access_token
+export TOKEN=<access_token>
+
+# call web app
+export  BASEURL="https://$DOMAIN"
+curl -i -vvv --location "$BASEURL"
+
+# call api
+export  BASEURL="https://api.$DOMAIN"
+curl -i -vvv --location "$BASEURL/external/api/books" -H "Authorization: Bearer $TOKEN" -H "ocp-apim-subscription-key:$SUB_KEY"
+----
