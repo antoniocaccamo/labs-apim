@@ -1,7 +1,7 @@
 = Labs : Azure API Management
 :docinfo: shared
 :doctype: book
-:imagesdir: ./img
+:imagesdir: ../img
 :title: Labs Azure API Management
 :toc: left
 :toclevels: 3
