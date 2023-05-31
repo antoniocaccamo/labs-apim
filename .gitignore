@@ -43,3 +43,5 @@ build/
 **/*.crt
 
 **/*.sh
+
+.asciidoctor

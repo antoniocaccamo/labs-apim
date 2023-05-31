@@ -1,12 +1,27 @@
-@startuml
+= Labs : Azure API Management
+:docinfo: shared
+:doctype: book
+:imagesdir: ./img
+:title: Labs Azure API Management
+:toc: left
+:toclevels: 3
+:sectanchors:
+:sectlinks:
+:sectnums:
 
+toc::[]
+
+== Scenario
+
+[plantuml]
+----
 hide footbox
 box "internet"
 actor Client                        as C
 
 box "azure" #LightBlue
 participant "Azure AD"              as AAD
-participant "Azure\nApp Gateway"    as AG
+participant "Azure\nApp GW"    as AG
 participant "Azure APIM"            as APM
 participant "Resource\nServer"      as R
 end box
@@ -29,5 +44,19 @@ APM -> AG: forward  response
 AG -> C:
 deactivate C
 
+----
 
-@enduml
+== Result
+
+.Result 
+[cols="1,1", valign="middle,middle"]
+|===
+
+| web call  | api call
+
+| image:05.www.png[]
+| image:06.api.png[]
+
+|===
+
+image:01.dns.public.png[left, width=500px]
