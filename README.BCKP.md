@@ -4,26 +4,26 @@
 
 |                                       |                                       |
 | :---:                                 | :---:                                 |
-| ![](../img/06.api.png)                | ![](../img/06.web.png)                |
+| ![](img/06.api.png)                | ![](img/06.web.png)                |
 
 
 ## Resource Group 
 |                                |                                        |
 | :---:                          | :---:                                  |
-| ![x](../img/02.azure.resource.group.png)        | ![x](../img/03.azure.nsg.subnet.apim.png) |
+| ![x](img/02.azure.resource.group.png)        | ![x](img/03.azure.nsg.subnet.apim.png) |
 
 
 ## DNS
 
 |  Public                       | Private Zone                          |
 | :---:                         | :---:                                 |
-| ![](../img/01.dns.public.png) | ![](../img/04.azure.private.dns.png)  |
+| ![](img/01.dns.public.png) | ![](img/04.azure.private.dns.png)  |
 
 ## APIM
 |                                |                                        |
 | :---:                          | :---:                                  |
-| ![x](../img/28.apim.png)        | ![x](../img/30.apim.custom.domain.png) |
-| ![x](../img/31.apim.vnet.png)   | ![x](../img/32.apim.vnet.status.png)  |
+| ![x](img/28.apim.png)        | ![x](img/30.apim.custom.domain.png) |
+| ![x](img/31.apim.vnet.png)   | ![x](img/32.apim.vnet.status.png)  |
 
 
 ## Application GW

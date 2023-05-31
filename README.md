@@ -42,7 +42,7 @@ sequenceDiagram
 ```
 
 ## documentation
- - [docs](./docs/README.md)
+ - [docs](./docs/README.BCKP.md)
 - [labs-apim-app code](./code/README.md)
 
 ### _steps_
