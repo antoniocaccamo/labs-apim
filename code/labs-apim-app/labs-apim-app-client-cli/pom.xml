@@ -4,11 +4,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>it.antoniocaccamo.labs</groupId>
+
 	<artifactId>labs-apim-app-client-cli</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>labs-apim :: app-client-cli</name>
-	<description>labs-apim :: app-client-cli</description>
+	<name>labs :: labs-apim :: app-client-cli</name>
+	<description>labs :: labs-apim :: app-client-cli</description>
+	<parent>
+		<groupId>it.antoniocaccamo.labs</groupId>
+		<artifactId>labs-apim</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../../../pom.xml</relativePath>
+	</parent>
 	<properties>
 		<java.version>17</java.version>
 		<spring-boot-dependencies.version>3.0.6</spring-boot-dependencies.version>
