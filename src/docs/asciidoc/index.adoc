@@ -1,4 +1,5 @@
 = Labs : Azure API Management
+Antonio Caccamo, 1.0, June 2023
 :docinfo: shared
 :doctype: book
 :imagesdir: images
@@ -55,9 +56,7 @@ deactivate C
 .Result 
 [cols="1,1", valign="middle,middle"]
 |===
-
-| web call  
-| api call
+| web call| api call
 
 | image:05.www.png[width=800px]
 | image:06.api.png[]
