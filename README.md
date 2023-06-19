@@ -37,8 +37,6 @@ sequenceDiagram
     APM ->> AG: forward  response
     AG ->> C: 
     deactivate C
-    
-    
 ```
 
 ## documentation
